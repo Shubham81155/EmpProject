@@ -35,7 +35,33 @@ public class Main {
 	}
 	void updateEmp()
 	{
+		System.out.println("Enter the employee no to update ");
+		int eno =sc.nextInt();
+		System.out.println("Enter the employee name");
+		String ename =sc.next();
 		
+		System.out.println("Enter the emp sal");
+		double esal =sc.nextDouble();
+		
+		System.out.println("Enter the desg");
+		String desg=sc.next();
+		Emp e=new Emp(eno,ename,esal,desg);
+		boolean flag=false;
+		for(Emp e1: al)
+		{
+			if(e1.getEno() == e.getEno())
+			{
+				e1=e;
+				System.out.println("Employee record modified");
+				flag =true;
+				break;
+			}
+		}
+		if(flag==false)
+		{
+			System.out.println("Emp Record not found");
+		}
+		System.out.println("======================");
 	}
 	void deleteEmp()
 	{
@@ -62,7 +88,7 @@ public class Main {
 				m.viewEmp();
 				break;
 			case 3: 
-				
+				m.updateEmp();
 				break;
 			case 4:
 				
