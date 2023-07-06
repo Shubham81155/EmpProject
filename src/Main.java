@@ -51,7 +51,9 @@ public class Main {
 		{
 			if(e1.getEno() == e.getEno())
 			{
-				e1=e;
+				e1.setEname(e.getEname());
+				e1.setSal(e.getSal());
+				e1.setDesg(e.getDesg());
 				System.out.println("Employee record modified");
 				flag =true;
 				break;
