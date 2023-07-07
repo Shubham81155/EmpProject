@@ -68,6 +68,25 @@ public class Main {
 	void deleteEmp()
 	{
 		
+		
+		System.out.println("Enter the employee no.to delete");
+		int eno=sc.nextInt();
+		
+		boolean flag= false;
+		for(Emp e:al)
+		{
+			if(e.getEno()==eno)
+			{
+				al.remove(e);
+				flag=true;
+				System.out.println("Emp record deleted");
+				break;
+			}
+		}
+		if(flag==false)
+		{
+			System.out.println("Emp record not found");
+		}
 	}
 
 	public static void main(String[] args) {
@@ -93,7 +112,7 @@ public class Main {
 				m.updateEmp();
 				break;
 			case 4:
-				
+				m.deleteEmp();
 				break;
 			case 5:
 				System.out.println("Thank you for using our services");
